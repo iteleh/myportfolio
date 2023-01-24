@@ -1,8 +1,12 @@
 import { Container, Row, Col, Tab, Nav } from "react-bootstrap";
 import { ProjectCard } from "./ProjectCard";
-import projImg1 from "../assets/img/project-img1.png";
-import projImg2 from "../assets/img/project-img2.png";
-import projImg3 from "../assets/img/project-img3.png";
+import kenjeffy from "../assets/img/kenjeffy.jpg";
+import gergil from "../assets/img/gergil.jpg";
+import trendybeatz from "../assets/img/trendybeatz.jpg";
+import tunezjam from "../assets/img/tunezjam.jpg";
+import deawoo from "../assets/img/deawoo.jpg";
+import globleindex from "../assets/img/globleindex.jpg";
+import ekammi from "../assets/img/ekammi.jpg";
 import colorSharp2 from "../assets/img/color-sharp2.png";
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
@@ -11,39 +15,55 @@ export const Projects = () => {
 
   const projects = [
     {
-      title: "Ecommerce Startup",
-      description: "Design & Development",
-      imgUrl: projImg1,
+      title: "Kenjeffy.com",
+      url: "https://kenjeffy.com",
+      description: "Business Sales Management Software for fuel station",
+      imgUrl: kenjeffy,
     },
     {
-      title: "Fashion Industry Startup",
-      description: "Design & Development",
-      imgUrl: projImg2,
+      title: "Gergil.com",
+      url:"https://gergil.com",
+      description: "Business Sales Management Software for fuel station",
+      imgUrl: gergil,
     },
     {
-      title: "Auction House Startup",
-      description: "Design & Development",
-      imgUrl: projImg3,
+      title: "trendybeatz.com",
+      url: "https://trendybeatz.com",
+      description: "Music Listings Site",
+      imgUrl: trendybeatz,
     },
     {
-      title: "Business Startup",
-      description: "Design & Development",
-      imgUrl: projImg1,
+      title: "tunezjam.com",
+      url: "https://tunezjam.com",
+      description: "Music Listings Site",
+      imgUrl: tunezjam,
     },
     {
-      title: "Business Startup",
-      description: "Design & Development",
-      imgUrl: projImg2,
+      title: "daewooencnigeria.com",
+      url: "https://www.daewooencnigeria.com/",
+      description: "Deawoo Nigeria website -a construction company",
+      imgUrl: deawoo,
     },
     {
-      title: "Business Startup",
-      description: "PHP & Laravel Development",
-      imgUrl: projImg3,
+      title: "globleindex.com",
+      url: "https://globleindex.com/",
+      description: "A business listing directory with board breaking systems",
+      imgUrl: globleindex,
+    },
+  ];
+
+
+  const projectsecond = [
+    {
+      title: "ekammi.com",
+      url: "https://ekammi.com/",
+      description: "A loan Application with website and Admin Dashboard",
+      imgUrl: ekammi,
     },
   ];
 
   return (
-    <section className="project" id="project">
+    <section className="project" id="projects">
       <Container>
         <Row>
           <Col size={12}>
@@ -51,7 +71,7 @@ export const Projects = () => {
               {({ isVisible }) =>
               <div className={isVisible ? "animate__animated animate__fadeIn": ""}>
                 <h2>Projects</h2>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                <p>My experience with PHP Laravel, CSS, JavaScript, Bootstrap, Mysql. I developed a complete web application from scratch, including system analysis and database design to fully operational softwares. </p>
                 <Tab.Container id="projects-tabs" defaultActiveKey="first">
                   <Nav variant="pills" className="nav-pills mb-5 justify-content-center align-items-center" id="pills-tab">
                     <Nav.Item>
@@ -79,11 +99,22 @@ export const Projects = () => {
                         }
                       </Row>
                     </Tab.Pane>
-                    <Tab.Pane eventKey="section">
-                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque quam, quod neque provident velit, rem explicabo excepturi id illo molestiae blanditiis, eligendi dicta officiis asperiores delectus quasi inventore debitis quo.</p>
+                    <Tab.Pane eventKey="second">
+                    <Row>
+                        {
+                          projectsecond.map((projectsecond, index) => {
+                            return (
+                              <ProjectCard
+                                key={index}
+                                {...projectsecond}
+                                />
+                            )
+                          })
+                        }
+                      </Row>
                     </Tab.Pane>
                     <Tab.Pane eventKey="third">
-                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque quam, quod neque provident velit, rem explicabo excepturi id illo molestiae blanditiis, eligendi dicta officiis asperiores delectus quasi inventore debitis quo.</p>
+                      <p></p>
                     </Tab.Pane>
                   </Tab.Content>
                 </Tab.Container>
